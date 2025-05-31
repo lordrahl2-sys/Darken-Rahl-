@@ -1,52 +1,56 @@
-import React, { useState } from 'react'; import { useForm } from 'react-hook-form';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lord Rahl - Notes Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f5f7fa;
+    }
+    h1 {
+      color: #333;
+      font-size: 3em;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: #666;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      font-size: 1em;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background: #0056b3;
+    }
+    .footer {
+      margin-top: 50px;
+      color: #999;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Lord Rahl's Notes</h1>
+  <p>Download, view, or share academic notes anytime.</p>
 
-export default function LoginPage() { const { register, handleSubmit, formState: { errors }, } = useForm();
+  <a href="notes.html" class="button">📘 View Notes</a>
+  <a href="#" class="button">📤 Upload Notes (coming soon)</a>
 
-const [loginSuccess, setLoginSuccess] = useState(false);
-
-const onSubmit = (data) => { // This is where you would handle authentication console.log('Login data:', data); setLoginSuccess(true); };
-
-const passwordValidation = { required: 'Password is required', minLength: { value: 8, message: 'Must be at least 8 characters' }, validate: (value) => /[A-Z]/.test(value) || 'Must contain an uppercase letter', pattern: { value: /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/, message: 'Password must include uppercase, lowercase, number, and special character', }, };
-
-return ( <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4"> <div className="max-w-md w-full bg-white shadow-xl rounded-xl p-8"> <h2 className="text-2xl font-bold mb-6 text-center">Login to Your Account</h2>
-
-<form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <div>
-        <label className="block mb-1 font-semibold">Email</label>
-        <input
-          type="email"
-          {...register('email', { required: 'Email is required' })}
-          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="you@example.com"
-        />
-        {errors.email && (
-          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-        )}
-      </div>
-
-      <div>
-        <label className="block mb-1 font-semibold">Password</label>
-        <input
-          type="password"
-          {...register('password', passwordValidation)}
-          className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="StrongPassword123!"
-        />
-        {errors.password && (
-          <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
-        )}
-      </div>
-
-      <div className="flex items-center justify-between">
-        <label className="flex items-center text-sm">
-          <input type="checkbox" className="mr-2" /> Remember me
-        </label>
-        <a href="#" className="text-sm text-blue-600 hover:underline">
-          Forgot password?
-        </a>
-      </div>
-
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white py-
-
+  <div class="footer">
+    <p>📱 Pay via Mpesa: <strong>0112399557</strong></p>
+    <p>&copy; 2025 Lord Rahl</p>
+  </div>
+</body>
+</html>
